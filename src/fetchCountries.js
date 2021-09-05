@@ -1,11 +1,9 @@
-export function fetchCountries(name) {
+
+export function fetchCountries(country) {
     const FILTRES = 'fields=name;capital;population;flag;languages';
-    console.log(name);
-    return fetch(`https://restcountries.eu/rest/v2/name/${name}?${FILTRES}`)
-    .then(response => {
-        if (!response.ok) {
-            throw new onFetchError(response.status);
-          }
-          return response.json();
-    });
+     return fetch(`https://restcountries.eu/rest/v2/name/${country}?${FILTRES}`)
+         .then(data => {
+              if(!data.ok) {throw new onFetchError(data.status);}
+            return data.json()
+         })
 }

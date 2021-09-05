@@ -1,5 +1,6 @@
 {{#each this}}
-
-<h2 class="countries"><img src="{{flag}}" alt="flag {{name}}" class="image" height=30>{{name}}</h2>
-
+<li class="countries-list">
+    <img class="country-flag" src="{{flag}}" alt="{{name}}" width=100>
+    <h2 class="country-name">{{name}}</h2>
+</li>
 {{/each}}
